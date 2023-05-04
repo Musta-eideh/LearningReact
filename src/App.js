@@ -1,20 +1,12 @@
 import './App.css';
-import HelloWorld from './components/HelloWorld';
-import SayMyname from './components/SayMyName';
-import Pessoa from './components/Pessoa'
-import Frase from './components/Frase';
-import List from './components/List';
-import Evento from './components/Evento';
-import Form from './components/Form';
+import Condicional from './components/evento/Condicional';
 
 function App() {
 
   return (
     <div className="App">
-      <h1>Testando eventos</h1>
-      <Evento numero="1"/>
-      <Evento numero="2"/>
-      <Form />
+      <h1>Renderização Condicional</h1>
+      <Condicional />
     </div>
   );
 }

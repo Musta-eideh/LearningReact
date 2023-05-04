@@ -1,16 +1,26 @@
 import './App.css';
 import HelloWorld from './components/HelloWorld';
+import SayMyname from './components/SayMyName';
+import Pessoa from './components/Pessoa'
+import Frase from './components/Frase';
+import List from './components/List';
 
 function App() {
-  const name = "Mustafa";
-  const newName = name.toLocaleUpperCase();
-  
+
   return (
     <div className="App">
-      <h1>Olá React!</h1>
-      <p>Meu primeiro App</p>
-      <p>Olá, {name}!!</p>
+      <Frase />
       <HelloWorld />
+      <SayMyname 
+        nome="Mustafa"
+      />
+      <Pessoa 
+      nome="Mustafa"
+      idade={20}
+      profissao="Programador"
+      foto="https://via.placeholder.com/150"
+    />
+    <List />
     </div>
   );
 }

@@ -1,43 +1,35 @@
-import { BrowserRouter as Router, Link } from 'react-router-dom';
-import {Routes ,Route} from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import './App.css';
 import Home from './pages/Home';
 import Contato from './pages/Contato';
 import Empresa from './pages/Empresa';
+import Navbar from './components/Layout/Navbar'
+import Footer from './components/Layout/Footer'
 
 
 function App() {
+  return (
+    // O Router envolve toda a aplicação
+    <Router>
+      <Navbar />
+      {/* A parte do Switch é onde substitui o componente da página */}
 
-  // O Router envolve toda a aplicação
-  <Router>
-    <ul>
-      <li>
-        <Link to="/">Home</Link> 
-      </li>
-      <li>
-        <Link to="/empresa">Empresa</Link> 
-      </li>
-      <li>
-        <Link to="/contato">Contato</Link> 
-      </li>
-    </ul>
+      {/* O route efetua o roteamento, a rota "/" que pertence ao componente tal... */}
 
-    {/* A parte do Switch é onde substitui o componente da página */}
-
-    {/* O route efetua o roteamento, a rota "/" que pertence ao componente tal... */}
-
-    <Routes>
-      <Route path="/" element={Home}>
-        <Home />
-      </Route>
-      <Route path="/contato">
-        <Contato />
-      </Route>
-      <Route path="/empresa">
-        <Empresa />
-      </Route>
-    </Routes>
-  </Router>
+      <Switch>
+        <Route exact path="/" >
+          <Home />
+        </Route>
+        <Route path="/contato">
+          <Contato />
+        </Route>
+        <Route path="/empresa">
+          <Empresa />
+        </Route>
+      </Switch>
+      <Footer />
+    </Router>
+  )
 }
 
 export default App;
